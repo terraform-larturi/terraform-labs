@@ -5,3 +5,9 @@
 ```bash
 ssh ec2-user@34.201.242.39
 ```
+
+## Comandos
+
+```bash
+terraform plan --var-file=qa.tfvars
+```
