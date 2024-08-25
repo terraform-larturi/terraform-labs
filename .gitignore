@@ -33,4 +33,9 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-07-aws-ec2-nginx/nginx-server.key
+07-aws-ec2-nginx/nginx-server-dev.key
+07-aws-ec2-nginx/nginx-server-dev.key.pub
+07-aws-ec2-nginx/nginx-server-test.key
+07-aws-ec2-nginx/nginx-server-test.key.pub
+07-aws-ec2-nginx/nginx-server-prod.key
+07-aws-ec2-nginx/nginx-server-prod.key.pub
