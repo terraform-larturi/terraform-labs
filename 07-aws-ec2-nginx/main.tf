@@ -1,7 +1,18 @@
+####### tfstate #######
+terraform {
+  backend "s3" {
+    bucket = "terraform-labs-larturi"
+    key    = "terraform-labs-larturi/terraform.tfstate"
+    region = "us-east-1"
+  }
+}
+
+####### Provider #######
 provider "aws" {
   region = "us-east-1"
 }
 
+####### Modulo Instancia EC2 con Nginx (Dev) #######
 module "nginx_server_dev" {
   source = "./nginx_server_module"
 
@@ -11,6 +22,7 @@ module "nginx_server_dev" {
   environment   = "dev"
 }
 
+####### Modulo Instancia EC2 con Nginx (Test) #######
 module "nginx_server_test" {
   source = "./nginx_server_module"
 
@@ -20,6 +32,7 @@ module "nginx_server_test" {
   environment   = "test"
 }
 
+####### Modulo Instancia EC2 con Nginx (Prod) #######
 module "nginx_server_prod" {
   source = "./nginx_server_module"
 
@@ -29,6 +42,7 @@ module "nginx_server_prod" {
   environment   = "prod"
 }
 
+####### Outputs #######
 output "nginx_public_ip_dev" {
   description = "Direccion de IP publica de la instancia EC2 (dev)"
   value       = module.nginx_server_dev.server_public_ip
